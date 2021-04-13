@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Appliaction</title>
+</head>
+<body>
+    
+
+    <div class="container">
+        <header class="mt-5">
+            <h1 class="text-center">Welcome To Quiz App</h1>
+        </header>
+        <div class="row align-items-center">
+            <div class="col-md-6 mx-auto mt-5">
+                <div id="app_widget" class="align-items-center"></div>
+            </div>
+        </div>
+    </div>
+
+    <script id="quiz_view" type="text/x-handlebars-template">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 500px; height: 500px;">
+
+                        <div class="card-body">
+                            <h4 class="card-title text-dark question-text ">{{ questions.0.questionText }} </h4>
+                            <div class="row text-center">
+                                <div class="col-md-6">
+                                    <div class="counter">
+                                        <i class="fas fa-tasks fa-2x text-dark"></i>
+                                        <h2 class="timer count-title count-number text-dark">{{this.current_score}}</h2>
+                                        <p class="count-text text-dark">Score</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <div class="counter">
+                                        <i class="far fa-list-alt fa-2x text-dark"></i>
+                                        <h2 class="timer count-title count-number text-dark">{{this.current_score}}</h2>
+                                        <p class="count-text text-dark">
+                                            <span class="text-dark p-3">Question {{this.current_score}}</span>/ 4
+                                        </p>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <div>
+                                <button class="btn btn-primary pull-left mb-2" data-vote="hire">{{ questions.0.answerOptions.0.answerText }}</button>
+                                <button class="btn btn-primary pull-left mb-2" data-vote="fire">{{ questions.0.answerOptions.1.answerText }}</button>
+                                <button class="btn btn-primary pull-left mb-2" data-vote="hire">{{ questions.0.answerOptions.2.answerText }}</button>
+                                <button class="btn btn-primary pull-left" data-vote="fire">{{ questions.0.answerOptions.3.answerText }}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
